@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Shopme', 'none')" />
+<body>
+<div class="container-fluid">
+<!--	<div th:replace="navigation :: header_menu"></div>-->
+
+	<div th:replace="nav::header"></div>
+<!--	<div th:replace="navigation :: search_nav"></div>-->
+
+	<div class="container-fluid">
+
+		<th:block th:each="section : ${listSections}">
+			<div class="row mt-3">
+				<div class="col"><h2 class="text-center p-5">[[${section.heading}]]</h2></div>
+			</div>
+			<div class="row" th:if="${section.description != ''}" >
+				<th:block th:unless="${section.type.toString() == 'Text'}">
+					<div class="col"><h6 class="text-center">[[${section.description}]]</h6></div>
+				</th:block>
+				<th:block th:if="${section.type.toString() == 'Text'}">
+					<div th:utext="${section.description}" class="col border p-2 m-2"></div>
+				</th:block>
+				&nbsp;
+			</div>
+			<div class="row" th:if="${section.type.toString() == 'All_Categories'}">
+				<div th:replace="homepage/all_categories_section :: content">All Categories Section</div>
+			</div>
+
+			<div  th:unless="${#lists.isEmpty(section.productSections)}">
+				<div th:replace="homepage/product_section :: content4">Product Section</div>
+			</div>
+
+			<div class="row" th:unless="${#lists.isEmpty(section.categorySections)}">
+				<div th:replace="homepage/category_section :: content">Category Section</div>
+			</div>
+
+			<div class="row" th:unless="${#lists.isEmpty(section.brandSections)}">
+				<div th:replace="homepage/brand_section :: content">Brand Section</div>
+			</div>
+
+		</th:block>
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>
+<div th:replace="fragments::scripts"></div>
+</body>
+</html>

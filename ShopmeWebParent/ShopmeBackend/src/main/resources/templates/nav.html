@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="http://localhost:8080/ShopmeAdmin/">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PolluxUI Admin</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+<body>
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" th:fragment="topNav">
+    <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+            <a class="navbar-brand brand-logo" >
+            </a>
+            <a class="navbar-brand brand-logo-mini">
+            </a>
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <span class="typcn typcn-th-menu"></span>
+            </button>
+
+        </div>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-profile dropdown">
+                <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
+                    <img th:src="@{/images/whiteBg.png}" class="img-fluid img-lg" style="width: 250px;height: 70px"/>
+                </a>
+
+
+            </li>
+
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-date dropdown">
+                <a class="nav-link d-flex justify-content-center align-items-center" href="javascript:;">
+                    <h6 class="date mb-0">
+                        <div id="datetime"></div>
+                    </h6>
+                    <i class="typcn typcn-calendar"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+             <i class="mdi mdi-account "></i>&nbsp;
+                <span  class="nav-profile-name" sec:authentication="principal.fullname"></span></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                    <i class="typcn typcn-cog-outline mx-0"></i>
+                    <span class="count"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                    <a class="dropdown-item" th:href="@{/account}">
+                        <i class="typcn typcn-cog-outline text-primary"></i>
+                        Profile Settings
+                    </a>
+                    <form  th:action="@{/logout}" method="post" name="logoutForm">
+                        <button type="submit" style="display: none;"></button>
+                    <a class="dropdown-item" id="logoutLink">
+                        <i class="typcn typcn-eject text-primary"></i>
+                        Logout
+                    </a>
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+        </button>
+    </div>
+</nav>
+<div class="p-5"></div>
+<nav class="sidebar sidebar-offcanvas" id="sidebar" th:fragment="sideBar">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">User</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link"  th:href="@{/users}">View All</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/users/new}">Create New</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Category</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic1">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link"  th:href="@{/categories}">View All</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/categories/new}">Create New</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Brand</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic2">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link"  th:href="@{/brands}">View All</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/brands/new}">Create New</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Product</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic3">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link"  th:href="@{/products}">View All</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/products/new}">Create New</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/customers}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Customer</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/shipping_rates}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Shipping</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/orders}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Orders</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/reports}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Reports</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/coupons}" >
+                <i class="typcn typcn-device-desktop menu-icon"></i>
+                <span class="menu-title">Coupons</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic4" aria-expanded="false" aria-controls="ui-basic">
+                <i class="typcn typcn-document-text menu-icon"></i>
+                <span class="menu-title">Settings</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic4">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link"  th:href="@{/settings}">All Settings</a></li>
+                    <li class="nav-item"> <a class="nav-link" th:href="@{/sections}">Home Page</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav >
+<!-- base:js -->
+<script src="vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/template.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/dashboard.js"></script>
+<script>
+    function updateDateTime() {
+        var currentDate = new Date();
+
+        var options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+        var formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+        document.getElementById('datetime').innerText = formattedDate;
+    }
+
+    // Update date and time every second
+    setInterval(updateDateTime, 1000);
+
+    // Initial call to set the initial date and time
+    updateDateTime();
+
+
+        $(document).ready(function() {
+        $("#logoutLink").click(function(e) {
+            e.preventDefault();
+            $("#logoutForm button").click();
+        });
+    });
+
+</script>
+</body>
+</html>

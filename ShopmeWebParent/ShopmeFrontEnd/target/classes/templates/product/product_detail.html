@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="nav::header"></div>
+
+	<div th:replace="breadcrumb :: content"></div>
+
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-5 col-md-push-2">
+					<div id="product-main-img">
+						<div class="product-preview">
+							<img th:src="@{${product.mainImagePath}}" alt="">
+						</div>
+						<th:block th:each="extraImage, status : ${product.images}">
+							<div class="product-preview">
+								<img th:src="@{${extraImage.imagePath}}" alt="" th:index="${status.count}">
+							</div>
+						</th:block>
+					</div>
+				</div>
+
+				<div class="col-md-2  col-md-pull-5">
+					<div id="product-imgs">
+						<div class="product-preview">
+							<img th:src="@{${product.mainImagePath}}" alt="">
+						</div>
+						<th:block th:each="extraImage, status : ${product.images}">
+							<div class="product-preview">
+								<img th:src="@{${extraImage.imagePath}}" alt="" th:index="${status.count}">
+							</div>
+						</th:block>
+					</div>
+				</div>
+
+
+
+			<div class="col-md-5">
+				<div class="product-details">
+					<h2 class="product-name">[[${product.name}]]</h2>
+
+					<div>
+						<h3 class="product-price">
+							<span th:if="${product.discountPercent <= 0}">
+								<div th:replace="product/product_fragment :: price_fragment(${product.price})"></div>
+							</span>
+
+							<div th:if="${product.discountPercent > 0}">
+								Price:
+								<span style="font-size: larger; color: darkred"><div th:replace="product/product_fragment :: price_fragment(${product.discountPrice})"></div></span>
+								([[${#numbers.formatDecimal(product.discountPercent, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]] % off)
+							</div>
+						</h3>
+						<span class="product-available">
+							<span th:if="${product.inStock}" class="text-success"><b>In Stock</b></span>
+							<span th:unless="${product.inStock}" class="text-danger"><b>Out of Stock</b></span>
+						</span>
+					</div>
+					<p>
+						<div class="h5" th:utext="${product.shortDescription}"></div>
+					</p>
+
+					<div class="add-to-cart">
+						<div class="qty-label">
+							Quantity
+
+							<th:block th:if="${product.inStock}">
+								<div th:replace="cart/quantity_control :: quantity_control(1, ${product.id})"></div>
+							</th:block>
+
+						</div>
+						<button class="add-to-cart-btn" id="buttonAdd2Cart"><i  class="fa fa-shopping-cart"></i> add to cart</button>
+					</div>
+
+					<ul class="product-links">
+						<li>Category:</li>
+						<li><a >[[${product.category}]]</a></li>
+					</ul>
+
+				</div>
+			</div>
+
+
+				<div class="col-md-12">
+					<div id="product-tab">
+						<!-- product tab nav -->
+						<ul class="tab-nav">
+							<li class="active"><a data-toggle="tab" href="#tab1" class="h4">Description</a></li>
+						</ul>
+						<!-- /product tab nav -->
+
+						<!-- product tab content -->
+						<div class="tab-content">
+							<!-- tab1  -->
+							<div id="tab1" class="tab-pane fade in active">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="h5" th:utext="${product.fullDescription}"></div>
+									</div>
+								</div>
+							</div>
+							<!-- /tab1  -->
+						</div>
+						<!-- /product tab content  -->
+					</div>
+
+					<div id="product-tab">
+						<!-- product tab nav -->
+						<ul class="tab-nav">
+							<li class="active"><a data-toggle="tab" href="#tab1" class="h4">Details</a></li>
+						</ul>
+						<!-- /product tab nav -->
+
+						<!-- product tab content -->
+						<div class="tab-content">
+							<!-- tab1  -->
+							<div id="tab1" class="tab-pane fade in active">
+								<div class="row">
+									<div class="col-md-12">
+										<th:block th:each="detail : ${product.details}">
+											<div class="text-center">
+												<b>[[${detail.name}]]</b>:
+												<span>[[${detail.value}]]</span>
+											</div>
+										</th:block>
+									</div>
+								</div>
+							</div>
+							<!-- /tab1  -->
+						</div>
+						<!-- /product tab content  -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>
+<div th:replace="fragments::scripts"></div>
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+	productId = "[[${product.id}]]";
+	var csrfHeaderName = "[[${_csrf.headerName}]]";
+	var csrfValue = "[[${_csrf.token}]]";	
+	
+
+</script>
+
+<script type="text/javascript" th:src="@{/js/common_modal.js}"></script>
+<script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>
+<script type="text/javascript" th:src="@{/js/add_to_cart.js}"></script>
+</body>
+</html>

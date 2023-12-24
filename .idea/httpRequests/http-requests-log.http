@@ -1,0 +1,41 @@
+POST http://localhost/user/create_order
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-28T231815.403.json
+
+###
+
+POST http://localhost:80/Shopme/create_order
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Cookie: JSESSIONID=6F26A2040242CDDB35FEA23D0ADC3F3A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-28T223638.403.json
+
+###
+
+POST http://localhost:80/user/create_order
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-28T222535.404.html
+
+###
+
+POST http://localhost:80/Shopme/create_order
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-28T222534.403.json
+
+###
+

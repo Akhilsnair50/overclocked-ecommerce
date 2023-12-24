@@ -1,0 +1,4 @@
+com\shopme\OrderRepositoryTests.class
+com\shopme\ShopmeFrontEndApplicationTests.class
+com\shopme\CustomerRepoTest.class
+com\shopme\CartItemRepositoryTests.class

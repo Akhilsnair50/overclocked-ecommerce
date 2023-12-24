@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Shopping Cart', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="nav::header"></div>
+	<div class="text-center">
+		<h2>Checkout</h2>
+	</div>
+	
+	<div class="row m-1">
+		<div class="col-sm-8">
+			<div class="card">
+				<div class="card-header"><h5>Shipping information</h5></div>
+				<div class="card-body">
+					<p>
+						<b>Ship to:</b>&nbsp; [[${shippingAddress}]]
+						<a th:href="@{/address_book(redirect=checkout)}">[Ship to another address]</a>
+					</p>
+					<p>
+						<b>Days to deliver: </b>[[${checkoutInfo.deliverDays}]] day(s)
+					</p>
+					<p>
+						<b>Expected deliver date: </b>[[${#dates.format(checkoutInfo.deliverDate, 'E, dd MMM yyyy')}]]
+					</p>
+				</div>
+			</div>		
+			
+			<div class="card mt-3 mb-3">
+				<div class="card-header"><h5>Payment Method</h5></div>
+
+				<div class="card-body">
+					<div th:if="${checkoutInfo.codSupported}">
+						<form th:action="@{/place_order}" method="post">
+						<p>
+						
+							<input type="radio" name="paymentMethod" id="radioCOD" value="COD" /> Cash on Delivery (COD)
+							&nbsp;
+							<button class="btn btn-primary d-none" type="submit" id="buttonSubmit">Place Order with COD</button>
+							<button type="submit" id="hiddenButton" value="RAZORPAY" name="paymentMethod" hidden="hidden" ></button>
+						</p>
+						</form>
+
+						<input hidden="hidden" id="payment_field" th:value="${checkoutInfo.razorPayTotal}" class="form-control">
+						&nbsp;
+						<div class="p-4">
+							<h5>Pay with Razorpay</h5>
+							<button class="btn btn-lg btn-primary col"
+									onclick="paymentStart()">Pay Online  now</button>
+						</div>
+
+						<div class="p-4">
+							<h5 class="">Apply Coupon </h5>
+
+							<form th:action="@{/apply-coupon}"  method="post" class="row p-4">
+								<input type="text" th:field="*{coupon.code}" class="form-control col" required placeholder="coupon code">
+								<input type="hidden" th:field="*{checkoutInfo}" />
+
+								<button class="btn btn-info col" type="submit">Apply Coupon</button>
+							</form>
+
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-header"><h5>Order Summary</h5></div>
+				<div class="card-body">
+					<div>
+					<table>
+						<th:block th:each="item : ${cartItems}">
+						<tr th:with="product = ${item.product}">
+							<td>[[${item.quantity}]] X &nbsp;&nbsp;</td>
+							<td width="70%">
+								<a th:href="@{'/p/' + ${product.alias}}" target="_blank">
+									[[${product.shortName}]]
+								</a>
+								<br/>
+								<small>Ship: <div th:replace="fragments :: format_currency(${item.shippingCost})"></div></small>
+							</td>
+							<td>
+								<div th:replace="fragments :: format_currency(${item.subtotal})">
+							</td>
+						</tr>
+						</th:block>
+						<tr><td colspan="3"><hr/></tr>
+					</table>
+					</div>
+					
+					<div class="row mt-2">
+						<div class="col">Product Total: </div>
+						<div class="col"><div th:replace="fragments :: format_currency(${checkoutInfo.productTotal})"></div></div>
+					</div>
+					
+					<div class="row mt-2">
+						<div class="col">Shipping Total: </div>
+						<div class="col"><div th:replace="fragments :: format_currency(${checkoutInfo.shippingCostTotal})"></div></div>
+					</div>
+							
+					<div class="row mt-2">
+						<div class="col">Payment Total: </div>
+						<div class="col"><b><div th:replace="fragments :: format_currency(${checkoutInfo.paymentTotal})"></div></b></div>
+					</div>										
+				</div>
+			</div>		
+		</div>		
+	</div>
+	
+	<div th:replace="navigation :: footer_menu"></div>
+</div>
+<script type="text/javascript">
+	contextPath = "[[@{/}]]";
+	var csrfHeaderName = "[[${_csrf.headerName}]]";
+	var csrfValue = "[[${_csrf.token}]]";
+
+	$(document).ready(function() {
+		$("#radioCOD").on("click", function() {
+			$("#buttonSubmit").removeClass("d-none");
+		});
+	});
+	function submit(){
+		document.getElementById('hiddenButton').click();
+	}
+	const paymentStart=()=>{
+		console.log("payment started");
+		let amount =$("#payment_field").val();
+		console.log(amount);
+		if (amount==null||amount==""){
+			alert("amount is required");
+			return;
+		}
+	$.ajax(
+			{
+				url :contextPath+'create_order',
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader(csrfHeaderName, csrfValue);
+				},
+				data: JSON.stringify({amount:amount,info:'order_request'}),
+				contentType:'application/json',
+				type:'POST',
+				dataType:'json',
+				success:function (response) {
+					//invoked when success
+					console.log(response);
+					if (response.status=="created") {
+						//open payment form
+						var options = {
+							"key": "rzp_test_YeGMvUyMRhiqlP", // Enter the Key ID generated from the Dashboard
+							"amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+							"currency": "INR",
+							"name": "Overclocked Ecommerce Platform", //your business name
+							"description": "Order Payment",
+							"image":"",
+							"order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+							handler: function (response) {
+								console.log(response.razorpay_payment_id);
+								console.log(response.razorpay_order_id);
+								console.log(response.razorpay_signature);
+								console.log('payment successful!');
+								Swal.fire({
+									position: "centre",
+									icon: "success",
+									title: "Payment done",
+									showConfirmButton: false,
+									timer: 1500
+								});
+								submit();
+							},
+							"notes": {
+								"address": "Overclocked "
+							},
+							"theme": {
+								"color": "#e3da86"
+							}
+						};
+						let rzp = new Razorpay(options);
+						rzp.on('payment.failed', function (response){
+							console.log(response.error.description);
+							console.log(response.error.source);
+							console.log(response.error.step);
+							console.log(response.error.reason);
+							console.log(response.error.metadata.order_id);
+							console.log(response.error.metadata.payment_id);
+							console.log(response.error.code);
+							alert('oops')
+						});
+						rzp.open();
+					}
+				},error:function (error){
+					console.log(error);
+					Swal.fire({
+						position: "centre",
+						icon: "error",
+						title: "error paying try again",
+						showConfirmButton: false,
+						timer: 1500
+					});
+				}
+			}
+	);
+	}
+
+
+	//coupon
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script type="text/javascript" th:href="@{/js/razorpay.js}"></script>
+</body>
+</html>	

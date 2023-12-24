@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - Shopme Admin', 'none')" />
+<body>
+<div class="container-scroller">
+    <nav th:replace="nav::topNav"></nav>
+    <div class="p-5"></div>
+    <div class="container-fluid page-body-wrapper">
+        <nav th:replace="nav::sideBar"></nav>
+        <div class="main-panel">
+            <div class="p-3">
+                <h3 class="page-header text-center">Create Coupon</h3>
+                <form th:action="@{/coupons/save}" method="post" th:object="${coupon}" >
+                    <div class="row">
+                        <label class="col">Code: </label>
+                        <input type="text" th:field="*{code}" class="form-control col"/>
+                    </div>
+                    <br>
+                    <label>Discount: <input type="text" th:field="*{discount}" /></label><br>
+                    <label>Expiration Date: <input type="date" th:field="*{expirationDate}" /></label><br>
+                    <label>Enabled: <input type="checkbox" th:field="*{enabled}" /></label><br>
+                    <input type="submit" value="Create Coupon" />
+                </form>
+            </div>
+            <div class="pt-5" th:replace="fragments :: footer"></div>
+        </div>
+    </div></div>
+<div th:replace="fragments::scripts"></div>
+</body>
+</html>

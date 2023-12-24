@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Error - Shopme', 'none')" />
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="nav::header"></div>
+	<div class="m-3">
+		<h1 style="font-size: 100px" class="text-center text-danger">Sorry :(</h1>
+		<h1 style="font-size: 100px" class="text-center">you don't have permission </h1>
+		<h1 style="font-size: 100px" class="text-center"> to access this page</h1>
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+	
+</div>
+</body>
+</html>

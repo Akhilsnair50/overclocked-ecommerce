@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - Shopme Admin', 'none')" />
+<body>
+<div class="container-scroller">
+    <nav th:replace="nav::topNav"></nav>
+    <div class="p-5"></div>
+    <div class="container-fluid page-body-wrapper">
+        <nav th:replace="nav::sideBar"></nav>
+        <div class="main-panel">
+            <div class="p-3">
+            <h3 class="page-header text-center">Manage Coupons</h3>
+
+            <a th:href="@{/coupons/create}" >
+                <button type="button" class="btn btn-secondary btn-lg btn-icon-text">
+                Add New
+                <i class="typcn typcn-document-add btn-icon-append" ></i>
+            </button>
+            </a>
+
+                <div th:replace="fragments::message"></div>
+        <div class="full-details">
+            <table class="table table-hover table-responsive-xl">
+                <thead class="bg-primary">
+                <tr>
+                    <th class="hideable-column">Coupon ID</th>
+                    <th>code</th>
+                    <th>Discount in %</th>
+                    <th>expiration</th>
+                    <th>enabled</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="coupon: ${coupons}">
+                    <td class="hideable-column">[[${coupon.id}]]</td>
+                    <td>
+                        [[${coupon.code}]]
+                    </td>
+                    <td th:text="${coupon.discount}">
+                    </td>
+                    <td th:text="${coupon.expirationDate}"></td>
+                    <td>
+                    <a th:if="${coupon.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+                       th:href="@{'/coupons/'+${coupon.id} + '/enabled/false'}"
+                       title="Disable this coupon"
+                    ></a>
+
+                    <a th:if="${coupon.enabled == false}" class="fas fa-circle fa-2x icon-dark"
+                       th:href="@{'/coupons/'+${coupon.id} + '/enabled/true'}"
+                       title="Enable this coupon"
+                    ></a>
+                    </td>
+                    <td>
+                        <a class="fas fa-trash fa-2x icon-dark link-delete"
+                           th:href="@{'/coupons/delete/' + ${coupon.id}}"
+                           title="Delete this coupon"></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+            </div>
+    <div th:replace="fragments :: footer"></div>
+        </div><div th:replace="fragments::scripts"></div>
+</div>
+</div>
+</body>
+</html>

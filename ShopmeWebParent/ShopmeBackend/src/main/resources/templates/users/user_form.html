@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
+<body>
+<div class="container-scroller">
+	<nav th:replace="nav::topNav"></nav>
+	<div class="p-5"></div>
+	<div class="container-fluid page-body-wrapper">
+		<nav th:replace="nav::sideBar"></nav>
+		<div class="main-panel">
+			<div class="content-wrapper">
+				<div class="col-12 grid-margin stretch-card">
+					<div class="card-body">
+						<h3 class="card-title ">[[${pageTitle}]]</h3>
+
+							<form th:action="@{/users/save}" method="post"
+							enctype="multipart/form-data"
+							th:object="${user}" onsubmit="return checkEmailUnique(this);">
+								<input type="hidden" th:field="*{id}" />
+								<div class="border  rounded p-3">
+								<div class="form-group row">
+								<label class="col-sm-4 col-form-label">E-mail:</label>
+								<div class="col-sm-8">
+									<input type="email" class="form-control" th:field="*{email}" required minlength="8" maxlength="128"  />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">First Name:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" th:field="*{firstName}" required minlength="2" maxlength="45"  />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">Last Name:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" th:field="*{lastName}" required minlength="2" maxlength="45"  />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">Password:</label>
+								<div class="col-sm-8">
+									<input th:if="${user.id == null}" type="password" class="form-control"
+										th:field="*{password}" required minlength="8" maxlength="20"  />
+
+									<input th:if="${user.id != null}" type="password" class="form-control"
+										th:field="*{password}" minlength="8" maxlength="20"  />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">Roles:</label>
+								<div class="form-check form-check-primary col-sm-8 ">
+									<th:block th:each="role : ${listRoles}">
+									<input type="checkbox"  th:field="*{roles}"
+										th:text="${role.name}"
+										th:value="${role.id}"
+										class="form-check-input "
+									/>
+									- <small class="form-check-label small">[[${role.description}]]</small>
+									<br/>
+									</th:block>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">Enabled:</label>
+								<div class="col-sm-8">
+									<input type="checkbox" th:field="*{enabled}" />
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">Photos:</label>
+								<div class="col-sm-8">
+									<input type="hidden" th:field="*{photos}" />
+									<input type="file" id="fileImage" name="image" accept="image/png, image/jpeg"
+										   class="mb-2 form-control btn-primary" />
+									<img id="thumbnail" alt="Photos preview" th:src="@{${user.photosImagePath}}"
+										class="img-fluid" />
+
+
+<!--									<div id="imagePreviewContainer" class="mb-3" style="display: none;" hidden="hidden">-->
+<!--										<h5>Live Image Preview</h5>-->
+<!--										<img id="imagePreview" class="img-fluid" alt="Live Preview">-->
+<!--									</div>-->
+
+<!--									<div id="cropperContainer" class="mb-3" style="display: none;">-->
+<!--										<h5>Image Cropper</h5>-->
+<!--										<img id="cropperImage" class="img-fluid" alt="Croppable Image">-->
+<!--									</div>-->
+								</div>
+							</div>
+
+							<div class="text-center">
+								<input type="submit" value="Save" class="btn btn-primary m-3" />
+								<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+							</div>
+						</div>
+						</form></div>
+				</div>
+	<div th:replace="modal_fragments :: modal_dialog"></div>
+	
+	<div th:replace="fragments :: footer"></div>
+
+</div></div></div></div>
+<div th:replace="fragments::scripts"></div>
+<script type="text/javascript">
+	MAX_FILE_SIZE = 102400; // 100KB
+	
+	moduleURL = "[[@{/users}]]";
+	
+	function checkEmailUnique(form) {
+		url = "[[@{/users/check_email}]]";
+		userEmail = $("#email").val();
+		userId = $("#id").val();
+		csrfValue = $("input[name='_csrf']").val();
+		
+		params = {id: userId, email: userEmail, _csrf: csrfValue};
+		
+		$.post(url, params, function(response) {
+			if (response == "OK") {
+				form.submit();
+			} else if (response == "Duplicated") {
+				showWarningModal("There is another user having the email " + userEmail);
+			} else {
+				showErrorModal("Unknown response from server");
+			}
+		}).fail(function() {
+			showErrorModal("Could not connect to the server");
+		});
+		
+		return false;
+	}
+
+
+
+
+	var cropper;
+
+	// Event listener for file input change
+	document.getElementById('fileImage').addEventListener('change', function (event) {
+		var fileInput = event.target;
+		var imagePreview = document.getElementById('imagePreview');
+		var imagePreviewContainer = document.getElementById('imagePreviewContainer');
+		var cropperContainer = document.getElementById('cropperContainer');
+		var cropperImage = document.getElementById('cropperImage');
+
+		// Check if a file is selected
+		if (fileInput.files && fileInput.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				// Display the live preview of the selected image
+				imagePreview.src = e.target.result;
+				imagePreviewContainer.style.display = 'block';
+
+				// Initialize Cropper for the cropperImage
+				cropperImage.src = e.target.result;
+				cropperContainer.style.display = 'block';
+				initializeCropper();
+			};
+
+			// Read the selected file as a data URL
+			reader.readAsDataURL(fileInput.files[0]);
+		} else {
+			// Hide the image preview and Cropper container if no file is selected
+			imagePreview.src = '';
+			imagePreviewContainer.style.display = 'none';
+			cropperContainer.style.display = 'none';
+
+			// Destroy previous Cropper instance
+			if (cropper) {
+				cropper.destroy();
+			}
+		}
+	});
+
+	// Function to initialize Cropper
+	function initializeCropper() {
+		// Destroy previous Cropper instance
+		if (cropper) {
+			cropper.destroy();
+		}
+
+		// Initialize Cropper for the cropperImage
+		cropper = new Cropper(document.getElementById('cropperImage'), {
+			aspectRatio:NaN ,  // Set your desired aspect ratio
+			viewMode: 2,  // Adjust viewMode as needed
+			dragMode: 'move',  // Enable free drag
+			responsive: true,  // Enable responsive mode
+		});
+	}
+
+	// Handle Form Submission
+	// var form = document.querySelector('form');
+	// form.addEventListener('submit', function (event) {
+	// 	event.preventDefault();
+	//
+	// 	// Get cropped data and set it to the hidden input
+	// 	var croppedData = cropper.getData();
+	// 	document.getElementById('croppedData').value = JSON.stringify(croppedData);
+	//
+	// 	// Submit the form
+	// 	form.submit();
+	// });
+</script>
+<script th:src="@{/js/common_form.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+</body>
+</html>

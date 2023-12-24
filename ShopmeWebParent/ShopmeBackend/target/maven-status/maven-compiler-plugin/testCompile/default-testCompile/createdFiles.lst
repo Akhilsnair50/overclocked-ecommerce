@@ -1,0 +1,17 @@
+com\shopme\admin\order\OrderRestControllerTests.class
+com\shopme\admin\product\ProductRepositoryTests.class
+com\shopme\admin\order\OrderRepositoryTests.class
+com\shopme\admin\Brand\BrandServiceTests.class
+com\shopme\admin\settings\country\CountryRestControllerTests.class
+com\shopme\admin\Brand\BrandRepositoryTests.class
+com\shopme\admin\settings\state\StateRestControllerTests.class
+com\shopme\admin\settings\StateRepositoryTests.class
+com\shopme\admin\report\ReportRestControllerTests.class
+com\shopme\admin\user\RoleRepositoryTests.class
+com\shopme\admin\order\OrderDetailRepositoryTests.class
+com\shopme\admin\S3UtilTests.class
+com\shopme\admin\settings\country\CountryRepositoryTests.class
+com\shopme\admin\user\SettingRepositoryTests.class
+com\shopme\admin\user\UserRepositoryTests.class
+com\shopme\admin\user\CurrencyRepositoryTests.class
+com\shopme\admin\category\CategoryServiceTests.class

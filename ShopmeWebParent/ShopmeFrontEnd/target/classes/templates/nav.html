@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- HEADER -->
+<header th:fragment="header">
+    <!-- TOP HEADER -->
+    <div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li><a href="#"><i class="fa fa-envelope"></i> overclocked50@email.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> India</a></li>
+            </ul>
+            <th:block sec:authorize="isAuthenticated()">
+            <ul class="header-links pull-right">
+                <li><a th:href="@{/account_details}" ><i class="fa fa-user"></i> My Account :</a></li>
+<!--                <li><a sec:authentication="principal.fullName" class="text-white"></a></li>-->
+            </ul>
+            </th:block>
+            <th:block sec:authorize="!isAuthenticated()">
+                <ul class="header-links pull-right">
+                    <li><a th:href="@{/login}" ><i class="fa fa-user"></i> Login</a></li>
+                </ul>
+            </th:block>
+        </div>
+    </div>
+    <!-- /TOP HEADER -->
+
+    <!-- MAIN HEADER -->
+    <div id="header" >
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- LOGO -->
+                <div class="col-md-3">
+                    <div class="header-logo">
+                        <a th:href="@{/}" class="logo">
+                            <img th:src="@{${S3_BASE_URI+SITE_LOGO}}" alt=""  class="img-fluid img-rounded ">
+                        </a>
+                    </div>
+                </div>
+                <!-- /LOGO -->
+
+                <!-- SEARCH BAR -->
+                <div class="col-md-6">
+                    <div class="header-search">
+                        <form class="form-inline" th:action="@{/search}" method="get">
+                            <select class="input-select">
+                                <option value="0">All Categories</option>
+                            </select>
+                            <input class="input" placeholder="Search here" type="search" name="keyword"
+                                   th:value="${keyword}" required>
+                            <button class="search-btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /SEARCH BAR -->
+                <th:block sec:authorize="isAuthenticated()">
+                    <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+                        <input type="submit" value="Logout" />
+                    </form>
+                </th:block>
+                <!-- ACCOUNT -->
+                <div class="col-md-3 clearfix">
+
+                    <div class="header-ctn">
+                        <th:block sec:authorize="isAuthenticated()">
+                        <div>
+                            <a href="javascript: document.logoutForm.submit()">
+                                <i class="fa fa-user icon-white"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                        </th:block>
+                        <!-- Cart -->
+                        <div class="dropdown">
+                            <a th:href="@{/cart}">
+                                <i class="fa fa-shopping-cart icon-white"></i>
+                                <span class="text-white">Your Cart</span>
+<!--                                <div class="qty">3</div>-->
+                            </a>
+                        </div>
+                        <!-- /Cart -->
+                        <!-- Menu Toogle -->
+                        <div class="menu-toggle">
+                            <a href="#">
+                                <i class="fa fa-bars icon-white"></i>
+                                <span>Menu</span>
+                            </a>
+                        </div>
+                        <!-- /Menu Toogle -->
+                    </div>
+                </div>
+                <!-- /ACCOUNT -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
+    <div  id="responsive-nav">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-center">
+            <ul class="main-nav nav navbar-nav ">
+                <li><a th:href="@{/}">Home</a></li>
+                <th:block sec:authorize="isAuthenticated()">
+                <li><a th:href="@{/address_book}">Address Book</a></li>
+                <li><a th:href="@{/orders}">Orders</a></li>
+                </th:block>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- /HEADER -->
+<!--<div th:fragment="navBottom" id="responsive-nav">-->
+<!--    <nav class="navbar navbar-expand-lg ">-->
+<!--        <ul class="main-nav nav navbar-nav">-->
+<!--            <li class="active"><a href="#">Home</a></li>-->
+<!--            <li><a href="#">Hot Deals</a></li>-->
+<!--            <li><a href="#">Categories</a></li>-->
+<!--            <li><a href="#">Laptops</a></li>-->
+<!--            <li><a href="#">Smartphones</a></li>-->
+<!--            <li><a href="#">Cameras</a></li>-->
+<!--            <li><a href="#">Accessories</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</div>-->
+
+<!-- NAVIGATION -->
+<nav id="navigation">
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+<!--        <div id="responsive-nav">-->
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Hot Deals</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Smartphones</a></li>
+                <li><a href="#">Cameras</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+</nav>
+
+<!-- /NAVIGATION -->
+
+</body>
+</html>

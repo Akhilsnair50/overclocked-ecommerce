@@ -1,0 +1,41 @@
+
+
+
+server:
+    port: 8081
+    servlet:
+        context-path: /Shopme
+spring:
+    datasource:
+        password: 1234
+        url: jdbc:mysql://localhost:3306/overclocked
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+                format_sql: true
+        show-sql: false
+    mvc:
+        pathmatch:
+            matching-strategy: ant-path-matcher
+    security:
+        oauth2:
+          client:
+              registration:
+                google:
+                    client-id: 897695534648-m1har5kl4jbs8u82gtf65fga5j6eh82f.apps.googleusercontent.com
+                    client-secret: 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
+                    scope:
+                      - email
+                      - profile
+    main:
+        allow-circular-references: true
+
+
+razorpay:
+    key:
+        id: rzp_test_YeGMvUyMRhiqlP
+        secret: FakJyJyE6bX6AcLCIrxmOCJh

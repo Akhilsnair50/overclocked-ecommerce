@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa902d19-0529-417c-b6e5-c5e2d806ea6a" name="Changes" comment="second commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="JavaScript File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Akhilsnair50&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="00f63b17-4de3-4962-9ac0-24c24f671731" />
+        <option name="url" value="https://github.com/Akhilsnair50/Overclocked-ecommerce-website.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-20/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.1.3/spring-data-commons-3.1.3-sources.jar!/org/springframework/data/repository/CrudRepository.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2VCubEZrGEVxWsKnRwWwatKAtj2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/akhil/OneDrive/Desktop/Shopme/Shopme/ShopmeWebParent/ShopmeFrontEnd/src/main/java/com/shopme&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/akhil/OneDrive/Desktop/shopme kili copy/ui2/ui change/Shopme/ShopmeWebParent/ShopmeFrontEnd/src/main/resources/static&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fafbc078bb82afd93869df318798afe8&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.shopme.admin.coupon" />
+      <recent name="com.shopme.admin.section" />
+      <recent name="com.shopme.admin.report" />
+      <recent name="com.shopme.admin.order" />
+      <recent name="com.shopme.setting" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\akhil\OneDrive\Desktop\shopme kili copy\ui2\ui change\Shopme\ShopmeWebParent\ShopmeFrontEnd\src\main\resources\static" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\shopme kili copy\ui2\ui change\Shopme\ShopmeWebParent\ShopmeFrontEnd\src\main\resources\static\js" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\shopme kili copy\ui change\Shopme\ShopmeWebParent\ShopmeBackend\src\main\resources\static\images" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\shopme kili copy\ui change\Shopme\ShopmeWebParent\ShopmeBackend\src\main\resources\static" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\shopme kili copy\ui change\Shopme\ShopmeWebParent\ShopmeBackend\src\main\resources\static\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\akhil\OneDrive\Desktop\Shopme\Shopme\ShopmeWebParent\ShopmeFrontEnd\src\main\resources\templates\product" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\Shopme\Shopme\ShopmeWebParent\ShopmeBackend\src\main\resources\static\images" />
+      <recent name="C:\Users\akhil\OneDrive\Desktop\Shopme\Shopme\ShopmeWebParent\ShopmeBackend\src\main\resources\templates\categories" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.shopme" />
+      <recent name="com.shopme.admin.category" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.shopme.common.entity" />
+      <recent name="com.shopme" />
+      <recent name="com.shopme.admin.settings" />
+      <recent name="com.shopme.admin.setting.state" />
+      <recent name="com.shopme.common.exception" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="head" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ShopmeFrontEndApplication">
+    <configuration name="Constants" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shopme.common.Constants" />
+      <module name="ShopmeCommon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopme.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReportRestControllerTests.testGetReportDataByProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShopmeBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopme.admin.report.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopme.admin.report" />
+      <option name="MAIN_CLASS_NAME" value="com.shopme.admin.report.ReportRestControllerTests" />
+      <option name="METHOD_NAME" value="testGetReportDataByProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="S3UtilTests.testDeleteFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShopmeBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopme.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopme.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.shopme.admin.S3UtilTests" />
+      <option name="METHOD_NAME" value="testDeleteFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="S3UtilTests.testListFolder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShopmeBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopme.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopme.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.shopme.admin.S3UtilTests" />
+      <option name="METHOD_NAME" value="testListFolder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="S3UtilTests.testUploadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ShopmeBackend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopme.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopme.admin" />
+      <option name="MAIN_CLASS_NAME" value="com.shopme.admin.S3UtilTests" />
+      <option name="METHOD_NAME" value="testUploadFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="ShopmeBackend" />
+      <option name="PACKAGE_NAME" value="com.shopme.user" />
+      <option name="MAIN_CLASS_NAME" value="com.shopme.user.RoleRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateFirstRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopmeBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShopmeBackend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shopme.admin.ShopmeBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopmeFrontEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShopmeFrontEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shopme.ShopmeFrontEndApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/.." />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopmeFrontEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="ShopmeFrontEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shopme.ShopmeFrontEndApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/.." />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopmeWebParentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ShopmeWebParent" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shopme.shopmewebparent.ShopmeWebParentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Constants" />
+      <item itemvalue="JUnit.S3UtilTests.testDeleteFile" />
+      <item itemvalue="JUnit.S3UtilTests.testListFolder" />
+      <item itemvalue="JUnit.S3UtilTests.testUploadFile" />
+      <item itemvalue="JUnit.ReportRestControllerTests.testGetReportDataByProduct" />
+      <item itemvalue="Spring Boot.ShopmeBackendApplication" />
+      <item itemvalue="Spring Boot.ShopmeFrontEndApplication" />
+      <item itemvalue="Spring Boot.ShopmeWebParentApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.S3UtilTests.testDeleteFile" />
+        <item itemvalue="JUnit.S3UtilTests.testUploadFile" />
+        <item itemvalue="JUnit.S3UtilTests.testListFolder" />
+        <item itemvalue="Application.Constants" />
+        <item itemvalue="JUnit.ReportRestControllerTests.testGetReportDataByProduct" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa902d19-0529-417c-b6e5-c5e2d806ea6a" name="Changes" comment="" />
+      <created>1694352453270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694352453270</updated>
+      <workItem from="1694352454286" duration="43962000" />
+      <workItem from="1694506380881" duration="13430000" />
+      <workItem from="1694694437535" duration="601000" />
+      <workItem from="1694700860380" duration="1193000" />
+      <workItem from="1694710216529" duration="831000" />
+      <workItem from="1694757386350" duration="7702000" />
+      <workItem from="1694770343603" duration="14627000" />
+      <workItem from="1694864422764" duration="10133000" />
+      <workItem from="1694934241002" duration="14160000" />
+      <workItem from="1694960136275" duration="5329000" />
+      <workItem from="1695028810240" duration="9610000" />
+      <workItem from="1695198331501" duration="17100000" />
+      <workItem from="1695376459030" duration="6331000" />
+      <workItem from="1695524871579" duration="1839000" />
+      <workItem from="1695545253395" duration="595000" />
+      <workItem from="1695636217098" duration="4326000" />
+      <workItem from="1695735731495" duration="1938000" />
+      <workItem from="1695816375743" duration="763000" />
+      <workItem from="1695825748918" duration="731000" />
+      <workItem from="1695884717641" duration="24000" />
+      <workItem from="1695991128870" duration="599000" />
+      <workItem from="1696002545863" duration="1193000" />
+      <workItem from="1696758491716" duration="594000" />
+      <workItem from="1696927741912" duration="1224000" />
+      <workItem from="1697025416789" duration="606000" />
+      <workItem from="1697808750530" duration="596000" />
+      <workItem from="1697875129817" duration="1382000" />
+      <workItem from="1697884873590" duration="759000" />
+      <workItem from="1697890563047" duration="2201000" />
+      <workItem from="1698402533283" duration="5564000" />
+      <workItem from="1699016051135" duration="9649000" />
+      <workItem from="1699119068763" duration="14000" />
+      <workItem from="1699119162146" duration="928000" />
+      <workItem from="1699123385329" duration="11000" />
+      <workItem from="1699169280678" duration="32041000" />
+      <workItem from="1699297765287" duration="21139000" />
+      <workItem from="1699370700086" duration="10475000" />
+      <workItem from="1699631520197" duration="63170000" />
+      <workItem from="1700115321657" duration="39486000" />
+      <workItem from="1700490787192" duration="25003000" />
+      <workItem from="1700558417653" duration="12065000" />
+      <workItem from="1700585825283" duration="55821000" />
+      <workItem from="1700702962717" duration="1091000" />
+      <workItem from="1700728859187" duration="21763000" />
+      <workItem from="1700894884092" duration="388000" />
+      <workItem from="1700984014977" duration="105000" />
+      <workItem from="1701009547475" duration="51917000" />
+      <workItem from="1701195410129" duration="3342000" />
+      <workItem from="1701247427059" duration="33508000" />
+      <workItem from="1701362397206" duration="7551000" />
+      <workItem from="1701409668760" duration="18634000" />
+      <workItem from="1701443951654" duration="20633000" />
+      <workItem from="1701784144279" duration="491000" />
+      <workItem from="1701784655533" duration="655000" />
+      <workItem from="1701943332540" duration="344000" />
+      <workItem from="1702010676121" duration="6728000" />
+      <workItem from="1702490063527" duration="557000" />
+      <workItem from="1702490640985" duration="110000" />
+      <workItem from="1702490787225" duration="3404000" />
+      <workItem from="1702494960897" duration="6624000" />
+      <workItem from="1702722434418" duration="3270000" />
+      <workItem from="1702736238211" duration="1051000" />
+      <workItem from="1702737309176" duration="18400000" />
+      <workItem from="1702882251722" duration="4831000" />
+      <workItem from="1702906204933" duration="285000" />
+      <workItem from="1702907142296" duration="33000" />
+      <workItem from="1702998420844" duration="32627000" />
+      <workItem from="1703190890304" duration="1043000" />
+      <workItem from="1703247023125" duration="16000" />
+      <workItem from="1703263995244" duration="18002000" />
+      <workItem from="1703283461586" duration="14597000" />
+      <workItem from="1703356654817" duration="23989000" />
+      <workItem from="1703381839209" duration="24099000" />
+    </task>
+    <task id="LOCAL-00001" summary="Overclocked">
+      <option name="closed" value="true" />
+      <created>1695047315683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695047315683</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Overclocked">
+      <option name="closed" value="true" />
+      <created>1701024084908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701024084908</updated>
+    </task>
+    <task id="LOCAL-00003" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1702737705664</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702737705664</updated>
+    </task>
+    <task id="LOCAL-00004" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1702750030802</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702750030803</updated>
+    </task>
+    <task id="LOCAL-00005" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1702750046039</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702750046039</updated>
+    </task>
+    <task id="LOCAL-00006" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1702762586086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702762586086</updated>
+    </task>
+    <task id="LOCAL-00007" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1702811005077</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702811005077</updated>
+    </task>
+    <task id="LOCAL-00008" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1702814817300</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702814817300</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:software.amazon.awssdk:s3" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:software.amazon.awssdk:sdk-core" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/ShopmeCommon" />
+      <path value="$PROJECT_DIR$/ShopmeWebParent" />
+      <path value="$PROJECT_DIR$/ShopmeWebParent/ShopmeBackend" />
+      <path value="$PROJECT_DIR$/ShopmeWebParent/ShopmeFrontEnd" />
+    </ignored-roots>
+    <MESSAGE value="Overclocked" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.expression.spel.SpelEvaluationException" package="org.springframework.expression.spel" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanDefinitionStoreException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Shopme$RoleRepositoryTests_testCreateFirstRole.ic" NAME="RoleRepositoryTests.testCreateFirstRole Coverage Results" MODIFIED="1694369213758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopme.user.*</FILTER>
+    </SUITE>
+  </component>
+</project>
